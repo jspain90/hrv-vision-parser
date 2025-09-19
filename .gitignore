@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local config / secrets
+.env
+
+# App artifacts
+outputs/
+processed/
+failed/
+uploaded/
+
+# Misc OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
