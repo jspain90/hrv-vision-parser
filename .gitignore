@@ -11,6 +11,7 @@ outputs/
 processed/
 failed/
 uploaded/
+upload_failed/
 
 # Misc OS/editor noise
 .DS_Store
