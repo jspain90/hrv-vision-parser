@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HRV Uploader</title>
+  <link rel="manifest" href="/static/manifest.json">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    .card { max-width: 640px; padding: 16px; border: 1px solid #ddd; border-radius: 12px; }
+    .row { margin: 8px 0; }
+    button { padding: 10px 16px; border-radius: 8px; border: 1px solid #444; background: #f6f6f6; cursor: pointer; }
+    #out pre { background: #111; color: #0f0; padding: 12px; border-radius: 8px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>HRV Uploader</h1>
+    <div class="row">
+      <input id="file" type="file" accept="image/*" capture="environment">
+    </div>
+    <div class="row">
+      <input id="token" type="password" placeholder="Upload token (optional)" style="width: 60%;">
+      <button id="send">Upload & Parse</button>
+    </div>
+    <div id="status" class="row"></div>
+    <div id="out" class="row"></div>
+  </div>
+  <script src="/static/app.js"></script>
+  <script>
+    // Register service worker only if HTTPS (PWA requirement)
+    if (location.protocol === 'https:' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
