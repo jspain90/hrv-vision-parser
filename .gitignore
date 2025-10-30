@@ -17,3 +17,4 @@ upload_failed/
 .DS_Store
 Thumbs.db
 .vscode/
+.claude
